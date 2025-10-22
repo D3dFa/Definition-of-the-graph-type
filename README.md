@@ -126,7 +126,7 @@ import sys
 from pathlib import Path
 import pytest
 
-# Импортируем модуль graph_kind.py из корня репозитория
+# Импортируем модуль Main.py из корня репозитория
 ROOT = Path(__file__).resolve().parents[1]
 MOD_PATH = ROOT / "Main.py"
 spec = importlib.util.spec_from_file_location("Main", str(MOD_PATH))
