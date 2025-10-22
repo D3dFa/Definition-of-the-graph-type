@@ -256,11 +256,4 @@ def test_complete_bipartite_details_on_star():
     mn = details["complete_bipartite"]
     assert set(mn.keys()) == {"m", "n"}
     assert sorted([mn["m"], mn["n"]]) == [1, 4]
-```
-> Тесты запускаются без «установки» пакета: файл `graph_kind.py` импортируется по пути из корня репозитория.
 
----
-
-## Лицензия
-
-Добавьте сюда вашу лицензию (например, MIT, Apache‑2.0 и т.п.).
