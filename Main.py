@@ -224,7 +224,7 @@ def iter_input_files(paths: List[str]) -> List[str]:
     return files
 
 def main():
-    ap = argparse.ArgumentParser(description="Определение вида графа (без рекурсии)")
+    ap = argparse.ArgumentParser(description="Определение вида графа")
     ap.add_argument('paths', nargs='+', help='Файлы или папки с файлами графов')
     ap.add_argument('--out-dir', default=None, help='Каталог для выходных .out файлов')
     args = ap.parse_args()
