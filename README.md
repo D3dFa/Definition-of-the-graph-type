@@ -18,8 +18,8 @@
 
 ```bash
 python --version             # Python 3.10+ (подойдёт и 3.8+)
-python graph_kind.py path/to/graph.txt
-python graph_kind.py graphs_dir --out-dir out
+python Main.py path/to/graph.txt
+python Main.py graphs_dir --out-dir out
 ```
 
 > Скрипт создаёт для каждого входного файла одноимённый файл отчёта с суффиксом `.out` (или складывает в `--out-dir`).
@@ -101,9 +101,9 @@ u2 v2
 ## Структура проекта
 
 ```
-graph_kind.py           # основной скрипт (класс Graph, проверки, CLI)
+Main.py           # основной скрипт (класс Graph, проверки, CLI)
 tests/
-  test_graph_kind.py    # автотесты pytest
+  test_main.py    # автотесты pytest
 ```
 
 ---
@@ -117,7 +117,7 @@ pip install pytest
 pytest -q
 ```
 
-Содержание `tests/test_graph_kind.py`:
+Содержание `tests/main.py`:
 
 ```python
 # -*- coding: utf-8 -*-
@@ -128,10 +128,10 @@ import pytest
 
 # Импортируем модуль graph_kind.py из корня репозитория
 ROOT = Path(__file__).resolve().parents[1]
-MOD_PATH = ROOT / "graph_kind.py"
-spec = importlib.util.spec_from_file_location("graph_kind", str(MOD_PATH))
+MOD_PATH = ROOT / "Main.py"
+spec = importlib.util.spec_from_file_location("Main", str(MOD_PATH))
 gk = importlib.util.module_from_spec(spec)
-sys.modules["graph_kind"] = gk
+sys.modules["Main"] = gk
 spec.loader.exec_module(gk)  # type: ignore
 
 def build_graph(n, edges):
